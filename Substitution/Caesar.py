@@ -1,27 +1,25 @@
 #!/bin/python3
-#ROT-13
-#ROT-47
 
 import argparse
 
-class ROT:
+class Caeser:
     def __init__(self):
 
         parser = argparse.ArgumentParser()
         parser.add_argument("-e", "--encrypt", help="Enter text for encryption:", type=str, required=False)
         parser.add_argument("-d", "--decrypt", help="Enter text for decryption:", type=str, required=False)
-        parser.add_argument("-a", "--alpha", default=47, help="Enter text for decryption:", type=int, required=False)
+        parser.add_argument("-k", "--key", type=int, help="Enter text for decryption:", required=True)
         self.txt = parser.parse_args()
 
         self.result= []
-        self.key = 13
+        self.key = self.txt.key
 
         if self.txt.encrypt:
             print(self.encrypt())
         elif self.txt.decrypt:
             print(self.decrypt())
         else:
-            print(self.txt.alpha)
+            print(self.key)
 
     def encrypt(self):
         for letter in self.txt.encrypt:
@@ -44,4 +42,4 @@ class ROT:
         return "".join(self.result)
 
 if __name__ == "__main__":
-    rot = ROT() 
+    caesar = Caeser() 
