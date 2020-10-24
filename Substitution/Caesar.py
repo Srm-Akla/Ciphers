@@ -42,4 +42,4 @@ class Caeser:
         return "".join(self.result)
 
 if __name__ == "__main__":
-    caesar = Caeser() 
+    Caeser() 
