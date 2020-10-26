@@ -14,7 +14,7 @@ Enter this command in your terminal:
 ## Substitution Ciphers
 
 ### Caesar Cipher:
-Simplest and popular cipher. Each letter of text is shifted X no of positions. Learn about [Caesar Cipher](https://en.wikipedia.org/wiki/Caesar_cipher)
+Simplest and popular cipher. Each letter of text is shifted *n* no of positions. Learn about [Caesar Cipher](https://en.wikipedia.org/wiki/Caesar_cipher)
 
 Python: 
 
