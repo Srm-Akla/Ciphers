@@ -4,28 +4,28 @@ class Atbash:
     def __init__(self):
         import argparse
         parser = argparse.ArgumentParser()
-        parser.add_argument('-e', '--encrypt', type=str, required=False)
-        parser.add_argument('-d', '--decrypt', type=str, required=False)
+        parser.add_argument('-t', '--text', type=str, required=False)
         self.args = parser.parse_args()
 
         self.cipher_txt = []
 
-        if self.args.encrypt:
-            print(self.encrypt())
-        elif self.args.decrypt:
-            print(self.decrypt())
+        if self.args.text:
+            print("Plain Text:",self.args.text)
+            print("Cipher Text:",self.cipher())
         else:
             print("Choose -e for encrypt or -d for decrypt")
 
-    def encrypt(self):
-        for letter in self.args.encrypt:
-            self.cipher_txt.append(-(ord(letter)+1)%26)
-        return self.cipher_txt
-
-    def decrypt(self):
-        for letter in self.args.decrypt:
-            self.cipher_txt.append(-(ord(letter)+1)%26)
-        return self.cipher_txt
+    def cipher(self):
+        for letter in self.args.text:
+            if letter == chr(32):
+                self.cipher_txt.append(" ")
+            elif letter >= chr(65) and letter <= chr(90):
+                upper = (25-(ord(letter)-65))+65
+                self.cipher_txt.append(chr(upper))
+            elif letter >= chr(97) and letter <= chr(122):
+                lower = (25-(ord(letter)-97))+97
+                self.cipher_txt.append(chr(lower))
+        return "".join(self.cipher_txt)
 
 if __name__ == "__main__":
     Atbash()
