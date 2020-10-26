@@ -35,9 +35,9 @@ class Caeser:
         for letter in self.txt.decrypt:
             if letter == chr(32):
                 self.result.append(" ")
-            elif letter > chr(65) and letter < chr(90):
+            elif letter >= chr(65) and letter <= chr(90):
                 self.result.append(chr((ord(letter)+(26-self.key)-65)%26 + 65))
-            elif letter > chr(97) and letter < chr(122):
+            elif letter >= chr(97) and letter <= chr(122):
                 self.result.append(chr((ord(letter)+(26-self.key)-97)%26 + 97))
         return "".join(self.result)
 

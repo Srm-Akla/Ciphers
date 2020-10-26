@@ -13,7 +13,7 @@ class Atbash:
             print("Plain Text:",self.args.text)
             print("Cipher Text:",self.cipher())
         else:
-            print("Choose -e for encrypt or -d for decrypt")
+            print("Enter -t 'text'")
 
     def cipher(self):
         for letter in self.args.text:
