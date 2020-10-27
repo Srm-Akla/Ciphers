@@ -4,7 +4,7 @@ Folder contains some Ciphers, scripts that are related to Cryptography
 # Tables of Contents
 - [Substitution](https://github.com/Srm-Akla/Cryptography/tree/main/Substitution_Ciphers)
 - [Transposition](https://github.com/Srm-Akla/Cryptography/tree/main/Transposition_Ciphers)
-- [Poly-Alphabetic]()
+- [Poly-Alphabetic](https://github.com/Srm-Akla/Cryptography/tree/main/Poly-Alphabetic_Ciphers)
 
 # Installation
 Enter this command in your terminal:
