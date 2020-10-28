@@ -1,15 +1,23 @@
 #XOR cipher
 
 txt = "HELLO"
+user_key = input("Enter Key: ")
+
 ascii_txt = []
 result = []
+keys = []
 
-for l in txt:
-    num = bin(ord(l))
-    res = bin(int(num,2) ^ int("0110110",2))
-    result.append(chr(int(res,2)))
+
+for l in range(len(txt)):
+    num = bin(ord(txt[l]))
+    key = bin(ord(user_key[l]))
+    res = bin(int(num,2) ^ int(key,2))
+
+    ascii_txt.append(num)
+    keys.append(key)
+    result.append(res)
     
 
-print("0110110")
-print("text", ascii_txt)
-print("Result", result)
+print("Result ", result)
+print("text   ", ascii_txt)
+print("key    ", keys)
