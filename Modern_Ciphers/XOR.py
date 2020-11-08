@@ -1,7 +1,7 @@
 #XOR cipher
 
-txt = "HELLO"
-user_key = input("Enter Key: ")
+txt = ")6(*("
+user_key = "asdfg" 
 
 ascii_txt = []
 result = []
@@ -9,15 +9,15 @@ keys = []
 
 
 for l in range(len(txt)):
-    num = bin(ord(txt[l]))
-    key = bin(ord(user_key[l]))
-    res = bin(int(num,2) ^ int(key,2))
+    num = txt[l]
+    key = user_key[l%len(user_key)]
+    res = chr(ord(num) ^ ord(key))
 
     ascii_txt.append(num)
     keys.append(key)
     result.append(res)
     
 
-print("Result ", result)
-print("text   ", ascii_txt)
-print("key    ", keys)
+print("Result: ", "".join(result))
+#print("text   ", ascii_txt)
+#print("key    ", keys)
