@@ -1,7 +1,13 @@
 #XOR cipher
+import argparse
 
-txt = ")6(*("
-user_key = "asdfg" 
+parser = argparse.ArgumentParser(description='XOR Cipher')
+parser.add_argument('-t', '--text', type=str, help='Input text for the Cipher')
+parser.add_argument('-k', '--key', type=str, help='Input Key')
+args = parser.parse_args()
+
+txt = args.text
+user_key = args.key
 
 ascii_txt = []
 result = []
@@ -18,6 +24,6 @@ for l in range(len(txt)):
     result.append(res)
     
 
-print("Result: ", "".join(result))
+print("Result:","".join(result))
 #print("text   ", ascii_txt)
 #print("key    ", keys)

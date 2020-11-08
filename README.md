@@ -51,6 +51,8 @@ A scytale is a tool to perform cipher. Spartans said to have used this cipher to
 ## Modern Ciphers
 
 #### XOR Cipher
+**Can only Encrypt UpperCase Letter**, trying to implement lowercase. XOR Encryption is an encryption method used to encrypt data and is hard to crack by brute-force method. Learn about [XOR](https://en.wikipedia.org/wiki/XOR_cipher)
 
+#### Usage:
 
-
+    Python3 XOR.py -t "SOME TEXT" -k "SOME KEY"
