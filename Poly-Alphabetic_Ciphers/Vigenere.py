@@ -19,19 +19,18 @@ class vigenere:
             #print("Plain Text:",self.args.encrypt)
             print("Cipher Text:",self.encrypt())
         else:
-            print("Enter -t 'text'")
+            print("Plain Text:",self.decrypt())
 
     def encrypt(self):
         for i in range(len(self.args.encrypt)):
-            #if self.args.encrypt[i].isspace():
-            #    self.encrypt_txt.append(" ")
-            #elif self.args.encrypt[i].isupper():
             upper = ((ord(self.args.encrypt[i])+ord(self.key[i%len(self.key)]))%26)+65
             self.encrypt_txt.append(chr(upper))
-            #elif self.args.encrypt[i].islower():
-            #    lower = ((ord(self.args.encrypt[i])+ord(self.key[i%len(self.key)]))%26)+97
-            #    self.encrypt_txt.append(chr(lower))
         return "".join(self.encrypt_txt) 
+    def decrypt(self):
+        for i in range(len(self.args.decrypt)):
+            upper = ((ord(self.args.decrypt[i])-ord(self.key[i%len(self.key)])+26)%26)+65
+            self.decrypt_txt.append(chr(upper))
+        return "".join(self.decrypt_txt) 
 
 if __name__ == '__main__':
     vigenere()
